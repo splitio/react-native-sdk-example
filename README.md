@@ -6,6 +6,10 @@ The most recent version of their README is available [here](https://github.com/r
 
 You can also take a look at the [React Native getting started](https://facebook.github.io/react-native/docs/getting-started.html) guide if you want to test on your own application.
 
+When running you should see a screen like the image below (taken from an iOS device).
+
+![Running instance screenshot](./mobile_screenshot.png)
+
 ## Table of Contents
 * [Prerrequisites](#prerrequisites)
 * [Available Scripts](#available-scripts)
