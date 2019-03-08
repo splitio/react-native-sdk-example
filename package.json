@@ -22,7 +22,7 @@
     "@splitsoftware/splitio": "^10.6.0",
     "expo": "^27.0.1",
     "react": "16.3.1",
-    "react-native": "^0.58.6",
+    "react-native": "~0.55.2",
     "rox-react-native": "^2.3.7"
   }
 }
