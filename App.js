@@ -22,10 +22,11 @@ export default class App extends React.Component {
     const factory = SplitFactory({
       core: {
         // Get your authorization key, you'll need browser type permissions, see https://docs.split.io/docs/understanding-api-keys
-        authorizationKey: '<API KEY>',
+        authorizationKey: '<API-KEY>',
         // Replace with the key you want to evaluate against
-        key: 'react_native_example'
+        key: 'react_native_example',
       },
+      blockUntilReady: true,
       // Change for true if you want SDK logs, see https://docs.split.io/docs/javascript-sdk-overview#section-logging
       debug: false
     });
