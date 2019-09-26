@@ -20,7 +20,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@splitsoftware/splitio": "^10.8.4-canary.2",
+    "@splitsoftware/splitio": "^10.8.4",
     "expo": "^34.0.1",
     "react": "16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz"
