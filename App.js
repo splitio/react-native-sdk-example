@@ -70,7 +70,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.smallSection}>
-          <Image resizeMode="contain" source={require('./logo.png')} style={styles.logo} />
+          <Image resizeMode="contain" source={require('./assets/logo.png')} style={styles.logo} />
         </View>
         <View style={styles.smallSection}>
           <Text>Using SDK Version: <Text style={{fontWeight: 'bold'}}>{this.sdkVersion}.</Text></Text>
