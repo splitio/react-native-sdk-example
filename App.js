@@ -26,7 +26,6 @@ export default class App extends React.Component {
         // Replace with the key you want to evaluate against
         key: 'react_native_example',
       },
-      blockUntilReady: true,
       // Change for true if you want SDK logs, see https://docs.split.io/docs/javascript-sdk-overview#section-logging
       debug: false
     });
