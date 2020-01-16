@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "babel-preset-expo": "^6.0.0",
-    "jest-expo": "^34.0.1",
+    "babel-preset-expo": "^8.0.0",
+    "jest-expo": "^36.0.0",
     "react-native-scripts": "^2.0.1",
     "react-test-renderer": "^16.9.0"
   },
@@ -20,9 +20,9 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@splitsoftware/splitio": "^10.8.4",
-    "expo": "^34.0.1",
-    "react": "16.8.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz"
+    "@splitsoftware/splitio": "^10.10.0",
+    "expo": "^36.0.0",
+    "react": "16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.1.tar.gz"
   }
 }
