@@ -41,7 +41,7 @@ export default class App extends React.Component {
     // a randomly selected Split, taking advantage of the SDK manager.
     this.client.on(this.client.Event.SDK_READY, () => {
       this.intervalId = setInterval(() => { // store id for cleanup on unmount.
-        const splitNames = this.manager.names(); 
+        const splitNames = this.manager.names();
         const evaluatedSplit = splitNames[Math.floor(Math.random() * splitNames.length)];
 
         this.setState({
@@ -52,7 +52,7 @@ export default class App extends React.Component {
       }, 3000);
     });
   }
-  
+
   componentDidMount() {
     // Instantiate Split SDK factory
     this._initSdk();
@@ -72,22 +72,22 @@ export default class App extends React.Component {
           <Image resizeMode="contain" source={require('./assets/logo.png')} style={styles.logo} />
         </View>
         <View style={styles.smallSection}>
-          <Text>Using SDK Version: <Text style={{fontWeight: 'bold'}}>{this.sdkVersion}.</Text></Text>
-          <Text>Every three seconds we will evaluate a random Split.</Text>  
+          <Text>Using SDK Version: <Text style={{ fontWeight: 'bold' }}>{this.sdkVersion}.</Text></Text>
+          <Text>Every three seconds we will evaluate a random Split.</Text>
         </View>
         <View style={styles.smallSection}>
-          <Text style={styles.bold}>Evaluated Split: <Text style={{color: '#4286f4'}}>{this.state.evaluatedSplit}.</Text></Text>        
-          <Text style={styles.bold}>Treatment: <Text style={{color: '#4286f4'}}>{this.state.treatment}.</Text></Text>
+          <Text style={styles.bold}>Evaluated Split: <Text style={{ color: '#4286f4' }}>{this.state.evaluatedSplit}.</Text></Text>
+          <Text style={styles.bold}>Treatment: <Text style={{ color: '#4286f4' }}>{this.state.treatment}.</Text></Text>
         </View>
         <View style={styles.section}>
-          <Text>Configured names for the environment matching the authorization key:</Text> 
-          <FlatList 
-            style={{marginTop: 10}}
+          <Text>Configured names for the environment matching the authorization key:</Text>
+          <FlatList
+            style={{ marginTop: 10 }}
             data={this.state.splitNames}
             keyExtractor={item => item}
-            renderItem={({item}) => (<Text style={styles.listItem}>&#9679;  {item}</Text>)}
+            renderItem={({ item }) => (<Text style={styles.listItem}>&#9679;  {item}</Text>)}
           />
-        </View>        
+        </View>
       </View>
     );
   }
