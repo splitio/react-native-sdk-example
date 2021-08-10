@@ -1,4 +1,4 @@
-# React Native & Split SDK example application.
+# Split React Native SDK example application.
 
 This project was bootstrapped with [Expo-CLI](https://docs.expo.io/versions/latest/workflow/expo-cli/) using its Managed Workflow.
 
