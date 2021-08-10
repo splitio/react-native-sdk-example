@@ -6,7 +6,7 @@ This project was bootstrapped with [Expo-CLI](https://docs.expo.io/versions/late
 $ npm install -g expo-cli
 $ expo init react-native-sdk-example
 $ cd react-native-sdk-example/
-$ npm install --save @splitsoftware/splitio # or 'yarn add @splitsoftware/splitio' if using yarn dependency manager
+$ npm install --save @splitsoftware/splitio-react-native # or 'yarn add @splitsoftware/splitio-react-native' if using yarn dependency manager
 ```
 
 Additionally, Split SDK can be used with React-Native-CLI. You can take a look at the [React Native getting started](https://facebook.github.io/react-native/docs/getting-started.html) guide if you want to test on your own application.
@@ -15,7 +15,7 @@ Additionally, Split SDK can be used with React-Native-CLI. You can take a look a
 $ npm install -g react-native-cli
 $ react-native init ReactNativeSdkExample
 $ cd ReactNativeSdkExample/
-$ npm install --save @splitsoftware/splitio # or 'yarn add @splitsoftware/splitio' if using yarn dependency manager
+$ npm install --save @splitsoftware/splitio-react-native # or 'yarn add @splitsoftware/splitio-react-native' if using yarn dependency manager
 ```
 
 When running you should see a screen like the image below (taken from an Android device).
@@ -36,9 +36,9 @@ When running you should see a screen like the image below (taken from an Android
 
 You'll need [NodeJS](https://nodejs.org/en/download/). We recommend that you use the latest LTS version.
 
-Second thing you'll need is to install [Expo-CLI](https://expo.io/) with the command `npm install -g expo-cli`. 
+Second thing you'll need is to install [Expo-CLI](https://expo.io/) with the command `npm install -g expo-cli`.
 
-To run the app, first change the '<API-KEY>' string in the App.js file with the browser key of your Split environment. Optionally, you can try a localhost configuration as the example below: 
+To run the app, first change the '<API-KEY>' string in the App.js file with the browser key of your Split environment. Optionally, you can try a localhost configuration as the example below:
 
 ```javascript
 const factory = SplitFactory({

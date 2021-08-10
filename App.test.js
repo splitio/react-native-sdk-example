@@ -2,6 +2,10 @@ import React from 'react';
 import App from './App';
 import renderer from 'react-test-renderer';
 
+/**
+ * @TODO update this test to use Jest mock of `@splitsoftware/splitio-react-native`
+ */
+
 // Using this naming convention so jest.mock allows me to use it on mock factory.
 import mockSplitSDK from '@splitsoftware/splitio';
 
