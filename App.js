@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
-import { SplitFactory } from '@splitsoftware/splitio';
+import { SplitFactory, DebugLogger } from '@splitsoftware/splitio-react-native';
 
 export default class App extends React.Component {
   sdkVersion = '';
@@ -26,8 +26,8 @@ export default class App extends React.Component {
         // Replace with the key you want to evaluate against
         key: 'react_native_example',
       },
-      // Change for true if you want SDK logs, see https://docs.split.io/docs/javascript-sdk-overview#section-logging
-      debug: false
+      // Remove if you want to disable logs. See https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#logging
+      debug: DebugLogger()
     });
 
     // Get the client and manager instances.
@@ -61,7 +61,7 @@ export default class App extends React.Component {
   componentWillUnmount() {
     clearInterval(this.intervalId);
     // Destroy the client to flush stored information as well as free resources.
-    // See https://docs.split.io/docs/javascript-sdk-overview#section-shutdown
+    // See https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#shutdown
     this.client.destroy();
   }
 
