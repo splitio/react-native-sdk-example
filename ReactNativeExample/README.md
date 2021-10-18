@@ -15,7 +15,6 @@ $ npm install --save @splitsoftware/splitio-react-native # or 'yarn add @splitso
   * [npm test](#npm-test)
   * [npm run ios](#npm-run-ios)
   * [npm run android](#npm-run-android)
-  * [npm run eject](#npm-run-eject)
 
 ## Setup
 
