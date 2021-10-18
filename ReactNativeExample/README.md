@@ -51,7 +51,7 @@ Finally run either `npm run android` or `npm run ios` in a separete terminal to 
 
 When running you should see a screen like the image below (taken from an Android device).
 
-![Running instance screenshot](./docs/mobile_screenshot.png)
+![Running instance screenshot](../docs/mobile_screenshot.png)
 
 More information on the available scripts below.
 

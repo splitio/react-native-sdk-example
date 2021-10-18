@@ -2,8 +2,8 @@
 
 Example apps to test [Split React Native SDK](https://github.com/splitio/react-native-client)
 
-- `/ReactNativeExample` was bootstrapped with React Native.
-- `/ExpoExample` is the same app but created with Expo CLI as an Expo managed project.
+- `/ReactNativeExample` was bootstrapped with [React Native](https://reactnative.dev/docs/getting-started).
+- `/ExpoExample` is the same app but created with [Expo](https://docs.expo.dev/).
 
 ## About Split
 

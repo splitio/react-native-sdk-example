@@ -44,7 +44,7 @@ Then call `npm install` and `npm start`.
 
 When running you should see a screen like the image below (taken from an Android device).
 
-![Running instance screenshot](./docs/mobile_screenshot.png)
+![Running instance screenshot](../docs/mobile_screenshot.png)
 
 If any error rises when trying to run the app in the Android or iOS emulator, consider updating Expo-Cli, or uninstalling the Expo app in your emulator to let Expo-Cli install an updated one.
 
