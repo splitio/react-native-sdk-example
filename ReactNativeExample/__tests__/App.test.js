@@ -1,6 +1,6 @@
 /**
  * If you're looking for how to test with Split SDK, you can mock the module import (see https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)
- * using the localhost (offline) mode of the JS SDK (see https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#localhost-mode)
+ * using the localhost (offline) mode of the SDK (see https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#localhost-mode)
  * which is what we're doing here.
  *
  * It is not recommended to use the default (online) mode of the SDK in your tests to not slow them down and avoid test flakiness due to network latencies.
