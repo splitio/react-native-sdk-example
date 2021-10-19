@@ -24,7 +24,7 @@ You'll need [NodeJS](https://nodejs.org/en/download/). We recommend that you use
 
 Second thing you'll need is to install [Expo-CLI](https://expo.io/) with the command `npm install -g expo-cli`.
 
-To run the app, first change the '<API-KEY>' string in the App.js file with the browser key of your Split environment. Optionally, you can try a localhost configuration as the example below:
+To run the app, first change the `'<API-KEY>'` string in the App.js file with the browser key of your Split environment. Optionally, you can try a localhost configuration as the example below:
 
 ```javascript
 const factory = SplitFactory({
