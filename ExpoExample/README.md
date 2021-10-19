@@ -62,7 +62,7 @@ Open it in the [Expo app](https://expo.io) on your phone to view it. It will rel
 
 Runs the [jest](https://github.com/facebook/jest) test runner on your tests.
 
-If you're looking for how to test with Split SDK, you can mock the module import (see [Jest documentation](https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)) using the [localhost mode](https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#localhost-mode) of the SDK, which is what we're doing here.
+If you're looking for how to test with Split SDK, you can mock the module import (see [Jest documentation](https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)) using the [localhost mode](https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#localhost-mode) of the SDK, which is what we're doing [here](./__tests__/App.test.js).
 
 ### `npm run ios`
 
@@ -74,4 +74,4 @@ Like `npm start`, but also attempts to open your app on a connected Android devi
 
 ### `npm run eject`
 
-This will start the process of "ejecting" from Create React Native App's build scripts. You'll be asked a couple of questions about how you'd like to build your project.
+This will start the process of "[ejecting](https://docs.expo.dev/expokit/eject/)" your Expo managed project, in order to be handled as part of a larger standard native project (a.k.a bare project) -- one that you would normally create using Xcode, Android Studio, or `react-native init`.
