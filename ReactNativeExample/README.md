@@ -1,6 +1,6 @@
 # Split React Native SDK example application.
 
-This project was bootstrapped with [React Native CLI](https://reactnative.dev/docs/getting-started) .
+This project was bootstrapped with [React Native CLI](https://reactnative.dev/docs/getting-started).
 
 ```sh
 $ npx react-native init ReactNativeExample
@@ -22,7 +22,7 @@ You'll need [NodeJS](https://nodejs.org/en/download/). We recommend that you use
 
 Second thing you'll need is to install Android Studio and Xcode for Android and iOS development respectively. See [React Native - Setting up the development environment](https://reactnative.dev/docs/environment-setup) for more details.
 
-To run the app, first change the `'<API-KEY>'` string in the App.js file with the browser key of your Split environment. Optionally, you can try a localhost configuration as the example below:
+To run the app, first replace the `'<API-KEY>'` string in the App.js file with the browser key of your Split environment. Optionally, you can try a localhost configuration as the example below:
 
 ```javascript
 const factory = SplitFactory({

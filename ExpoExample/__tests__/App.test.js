@@ -3,8 +3,7 @@
  * using the localhost (offline) mode of the SDK (see https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#localhost-mode)
  * which is what we're doing here.
  *
- * It is not recommended to use the default (online) mode of the SDK in your tests because that slows down your tests and increases their flakiness due to network latencies.
- * But if you want to do it anyway, be aware that you need to polyfill the 'fetch' API, which is used by the SDK but not provided by Jest (see https://www.npmjs.com/package/isomorphic-fetch).
+ * It is not recommended to use the default (online) mode of the SDK in your tests because that will slow them down and increase their flakiness due to network latencies.
  */
 jest.mock('@splitsoftware/splitio-react-native', () => {
   const splitio = jest.requireActual('@splitsoftware/splitio-react-native');

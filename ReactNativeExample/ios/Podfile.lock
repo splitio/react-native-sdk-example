@@ -337,7 +337,7 @@ PODS:
     - React-jsi (= 0.66.1)
     - React-logger (= 0.66.1)
     - React-perflogger (= 0.66.1)
-  - RNSplit (0.0.2-rc.2):
+  - RNSplit (0.1.0):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -523,7 +523,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 6600b5eed7c0fda4a433fa1198d1cb2690151791
   React-runtimeexecutor: 33a949a51bec5f8a3c9e8d8092deb259600d761e
   ReactCommon: 620442811dc6f707b4bf5e3b27d4f19c12d5a821
-  RNSplit: 140191b6a953c651e8d1e527e1d4aba63da68d21
+  RNSplit: b8c8a83160e75a324ef7949f28f4d4d8a812142b
   Yoga: 2b4a01651f42a32f82e6cef3830a3ba48088237f
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
