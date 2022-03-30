@@ -4,6 +4,9 @@
  * which is what we're doing here.
  *
  * It is not recommended to use the default (online) mode of the SDK in your tests because that will slow them down and increase their flakiness due to network latencies.
+ *
+ * Also, don't forget to destroy each created SDK instance, to free resources and clean pending async operations that might prevent Jest from exiting cleanly.
+ * In this test, the App component itself creates and destroys the SDK on `componentDidMount` and `componentWillUnmount` respectively.
  */
 jest.mock('@splitsoftware/splitio-react-native', () => {
   const splitio = jest.requireActual('@splitsoftware/splitio-react-native');

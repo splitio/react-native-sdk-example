@@ -6,7 +6,7 @@ This project was bootstrapped with [Expo-CLI](https://docs.expo.dev/workflow/exp
 $ npm install -g expo-cli
 $ expo init ExpoExample
 $ cd ExpoExample/
-$ npm install --save @splitsoftware/splitio-react-native # or 'yarn add @splitsoftware/splitio-react-native' if using yarn dependency manager
+$ npm install @splitsoftware/splitio-react-native # or 'yarn add @splitsoftware/splitio-react-native' if using yarn dependency manager
 ```
 
 ## Table of Contents
@@ -24,19 +24,24 @@ You'll need [NodeJS](https://nodejs.org/en/download/). We recommend that you use
 
 Second thing you'll need is to install [Expo-CLI](https://expo.io/) with the command `npm install -g expo-cli`.
 
-To run the app, first replace the `'<API-KEY>'` string in the App.js file with the browser key of your Split environment. Optionally, you can try a localhost configuration as the example below:
+To run the app, first replace the `'<API-KEY>'` string in the App.js file with the browser key of your Split environment.
+
+Optionally, you can try a [localhost configuration](https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#localhost-mode) as the example below:
 
 ```javascript
+// Localhost mode is simpler to set by importing the SplitFactory from the `full` entrypoint of the SDK
+import { SplitFactory } from '@splitsoftware/splitio-react-native/full';
+
 const factory = SplitFactory({
-    core: {
-        authorizationKey: 'localhost',
-        key: 'some_key'
-    },
-    features: {
-        'Test_Split': 'on',
-        'Test_Another_Split': 'dark',
-        'Test_Something_Else': 'off'
-    }
+  core: {
+    authorizationKey: 'localhost',
+    key: 'some_key',
+  },
+  features: {
+    Test_Split: 'on',
+    Test_Another_Split: 'dark',
+    Test_Something_Else: 'off',
+  },
 });
 ```
 
