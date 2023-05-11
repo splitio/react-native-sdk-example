@@ -22,7 +22,7 @@ You'll need [NodeJS](https://nodejs.org/en/download/). We recommend that you use
 
 Second thing you'll need is to install Android Studio and Xcode for Android and iOS development respectively. See [React Native - Setting up the development environment](https://reactnative.dev/docs/environment-setup) for more details.
 
-To run the app, first replace the `'<API-KEY>'` string in the App.js file with the browser key of your Split environment.
+To run the app, first replace the `'<SDK-KEY>'` string in the App.js file with the SDK key of client-side type of your Split environment.
 
 Optionally, you can try a [localhost configuration](https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#localhost-mode) as the example below:
 
@@ -36,9 +36,9 @@ const factory = SplitFactory({
     key: 'some_key',
   },
   features: {
-    Test_Split: 'on',
-    Test_Another_Split: 'dark',
-    Test_Something_Else: 'off',
+    test_feature_flag: 'on',
+    test_another_feature_flag: 'dark',
+    test_something_else: 'off',
   },
 });
 ```
