@@ -94,10 +94,10 @@ export default class App extends React.Component {
         </View>
         <View style={styles.smallSection}>
           <Text style={styles.bold}>
-            Evaluated feature flag: <Text style={{ color: '#4286f4' }}>{this.state.evaluatedFeatureFlag}</Text>.
+            Evaluated feature flag: <Text style={{ color: '#4286f4' }}>{this.state.evaluatedFeatureFlag}</Text>
           </Text>
           <Text style={styles.bold}>
-            Treatment: <Text style={{ color: '#4286f4' }}>{this.state.treatment}</Text>.
+            Treatment: <Text style={{ color: '#4286f4' }}>{this.state.treatment}</Text>
           </Text>
         </View>
         <View style={styles.section}>
