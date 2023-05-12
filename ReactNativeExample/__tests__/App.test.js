@@ -17,9 +17,9 @@ jest.mock('@splitsoftware/splitio-react-native', () => {
         core: {
           authorizationKey: 'localhost',
         },
-        // Mock your splits and treatments here
+        // Mock your feature flags here
         features: {
-          split_1: 'on',
+          feature_flag_1: 'on',
         },
         sync: {
           localhostMode: splitio.LocalhostFromObject(),
@@ -36,9 +36,9 @@ import App from '../App';
 
 const getEvaluation = root => {
   // eslint-disable-next-line prettier/prettier
-  const [{ children: [, splitName] }, { children: [, treatment] }] = root.toJSON().children[2].children;
+  const [{ children: [, featureFlagName] }, { children: [, treatment] }] = root.toJSON().children[2].children;
   return {
-    splitName: splitName.children[0],
+    featureFlagName: featureFlagName.children[0],
     treatment: treatment.children[0],
   };
 };
@@ -48,20 +48,20 @@ it('App renders correctly', done => {
   let root = renderer.create(<App />);
 
   let evaluation = getEvaluation(root);
-  expect(evaluation.splitName).toBe('');
+  expect(evaluation.featureFlagName).toBe('');
   expect(evaluation.treatment).toBe('not ready');
 
   // Since we mocked the SDK to run in localhost mode, on next tick the SDK is ready
-  // and the component is re-rendered with the mocked split name and treatment
-  setImmediate(() => {
+  // and the component is re-rendered with the mocked feature flag name and treatment
+  setTimeout(() => {
     evaluation = getEvaluation(root);
     //
-    expect(evaluation.splitName).toBe('split_1');
+    expect(evaluation.featureFlagName).toBe('feature_flag_1');
     expect(evaluation.treatment).toBe('on');
 
     // Unmount component to stop asynchronous operations and exit jest inmediately
     root.unmount();
 
     done();
-  }, 100);
+  }, 0 /* next tick */);
 });

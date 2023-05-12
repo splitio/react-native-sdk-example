@@ -24,16 +24,16 @@ export default class App extends React.Component {
     // We'll set some data on the component state to be used on the demo view.
     this.state = {
       treatment: 'not ready',
-      evaluatedSplit: '',
-      splitNames: [],
+      evaluatedFeatureFlag: '',
+      featureFlagNames: [],
     };
   }
 
   _initSdk() {
     const factory = SplitFactory({
       core: {
-        // Get your authorization key, you'll need browser type permissions, see https://docs.split.io/docs/understanding-api-keys
-        authorizationKey: '<API-KEY>',
+        // Get your SDK key of client-side type, see https://docs.split.io/docs/understanding-api-keys
+        authorizationKey: '<SDK-KEY>',
         // Replace with the key you want to evaluate against
         key: 'react_native_with_expo_example',
       },
@@ -51,21 +51,21 @@ export default class App extends React.Component {
     // We'll set an interval to run every three seconds and call getTreatment on
     // a randomly selected Split, taking advantage of the SDK manager.
     this.client.on(this.client.Event.SDK_READY, () => {
-      const evaluateSplit = () => {
-        const splitNames = this.manager.names();
-        const evaluatedSplit = splitNames[Math.floor(Math.random() * splitNames.length)];
+      const evaluateFeatureFlag = () => {
+        const featureFlagNames = this.manager.names();
+        const evaluatedFeatureFlag = featureFlagNames[Math.floor(Math.random() * featureFlagNames.length)];
 
         this.setState({
-          treatment: this.client.getTreatment(evaluatedSplit),
-          evaluatedSplit: evaluatedSplit,
-          splitNames,
+          treatment: this.client.getTreatment(evaluatedFeatureFlag),
+          evaluatedFeatureFlag,
+          featureFlagNames,
         });
       };
 
-      evaluateSplit();
+      evaluateFeatureFlag();
 
       // store id for cleanup on unmount.
-      this.intervalId = setInterval(evaluateSplit, 3000);
+      this.intervalId = setInterval(evaluateFeatureFlag, 3000);
     });
   }
 
@@ -91,21 +91,21 @@ export default class App extends React.Component {
           <Text>
             Using SDK Version: <Text style={{ fontWeight: 'bold' }}>{this.sdkVersion}</Text>.
            </Text>
-          <Text>Every three seconds we will evaluate a random Split.</Text>
+          <Text>Every three seconds we will evaluate a random feature flag.</Text>
         </View>
         <View style={styles.smallSection}>
           <Text style={styles.bold}>
-            Evaluated Split: <Text style={{ color: '#4286f4' }}>{this.state.evaluatedSplit}</Text>.
+            Evaluated feature flag: <Text style={{ color: '#4286f4' }}>{this.state.evaluatedFeatureFlag}</Text>
            </Text>
           <Text style={styles.bold}>
-            Treatment: <Text style={{ color: '#4286f4' }}>{this.state.treatment}</Text>.
+            Treatment: <Text style={{ color: '#4286f4' }}>{this.state.treatment}</Text>
            </Text>
         </View>
         <View style={styles.section}>
           <Text>Configured names for the environment matching the authorization key:</Text>
           <FlatList
             style={{ marginTop: 10 }}
-            data={this.state.splitNames}
+            data={this.state.featureFlagNames}
             keyExtractor={item => item}
             renderItem={({ item }) => <Text style={styles.listItem}>&#9679; {item}</Text>}
           />
