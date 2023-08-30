@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import type {PropsWithChildren} from 'react';
 import { StyleSheet, Text, View, FlatList, Image, LogBox } from 'react-native';
 
 import { SplitFactory, DebugLogger } from '@splitsoftware/splitio-react-native';
@@ -14,17 +15,25 @@ import { SplitFactory, DebugLogger } from '@splitsoftware/splitio-react-native';
 // Ignore timers warning when debugging in Android. No need to worry about it: https://github.com/facebook/react-native/issues/12981#issuecomment-652745831
 LogBox.ignoreLogs(['Setting a timer']);
 
-export default class App extends React.Component {
-  sdkVersion = '';
+export default class App extends React.Component<PropsWithChildren<{}>, {
+  evaluatedFeatureFlag: string;
+  featureFlagNames: string[];
+  treatment: string;
+}> {
 
-  constructor(props) {
+  sdkVersion = '';
+  client!: SplitIO.IClient;
+  manager!: SplitIO.IManager;
+  intervalId!: NodeJS.Timeout;
+
+  constructor(props: PropsWithChildren<{}>) {
     super(props);
 
     // We'll set some data on the component state to be used on the demo view.
     this.state = {
-      treatment: 'not ready',
       evaluatedFeatureFlag: '',
       featureFlagNames: [],
+      treatment: 'not ready',
     };
   }
 
@@ -45,7 +54,7 @@ export default class App extends React.Component {
     this.manager = factory.manager();
 
     // Store the version, this won't change.
-    this.sdkVersion = factory.settings.version.match(/(?:\.?\d{1,2}){3}/);
+    this.sdkVersion = factory.settings.version.split('-')[1];
 
     // We'll set an interval to run every three seconds and call getTreatment on
     // a randomly selected feature flag, taking advantage of the SDK manager.
@@ -55,9 +64,9 @@ export default class App extends React.Component {
         const evaluatedFeatureFlag = featureFlagNames[Math.floor(Math.random() * featureFlagNames.length)];
 
         this.setState({
-          treatment: this.client.getTreatment(evaluatedFeatureFlag),
           evaluatedFeatureFlag,
           featureFlagNames,
+          treatment: this.client.getTreatment(evaluatedFeatureFlag),
         });
       };
 
