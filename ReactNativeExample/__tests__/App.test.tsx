@@ -64,7 +64,7 @@ it('App renders correctly', done => {
     expect(evaluation.featureFlagName).toBe('feature_flag_1');
     expect(evaluation.treatment).toBe('on');
 
-    // Unmount component to stop asynchronous operations and exit jest inmediately
+    // Unmount component to stop asynchronous operations and exit jest immediately
     root.unmount();
 
     done();
