@@ -44,6 +44,8 @@ export default function App(): JSX.Element {
     // We'll set an interval to run every three seconds and call getTreatment on
     // a randomly selected feature flag, taking advantage of the SDK manager.
     client.on(client.Event.SDK_READY, () => {
+      setFactory(factory);
+
       const evaluateFeatureFlag = () => {
         const featureFlagNames = manager.names();
         const evaluatedFeatureFlag = featureFlagNames[Math.floor(Math.random() * featureFlagNames.length)];
@@ -64,7 +66,7 @@ export default function App(): JSX.Element {
     return () => {
       clearInterval(intervalId);
       client.destroy();
-    }
+    };
   }, []);
 
   return (

@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@splitsoftware/splitio-react-native": "0.7.0",
+    "@splitsoftware/splitio-react-native": "0.8.0",
     "react": "18.2.0",
     "react-native": "0.72.4"
   },

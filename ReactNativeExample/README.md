@@ -6,6 +6,7 @@ This project was bootstrapped with [React Native CLI](https://reactnative.dev/do
 $ npx react-native init ReactNativeExample
 $ cd ReactNativeExample/
 $ npm install @splitsoftware/splitio-react-native # or 'yarn add @splitsoftware/splitio-react-native' if using yarn dependency manager
+$ cd ios/ && pod install # required to have the SDK streaming feature working on iOS
 ```
 
 ## Table of Contents
@@ -47,7 +48,7 @@ Then install the project dependencies and run the server that communicates with 
 
 ```sh
 npm install
-cd ios/ && pod install && cd .. # for iOS only
+cd ios/ && pod install && cd .. # required to have the SDK streaming feature working on iOS
 npm start # init Metro bundler server
 ```
 
