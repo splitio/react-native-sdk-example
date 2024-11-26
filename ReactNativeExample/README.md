@@ -19,7 +19,7 @@ $ cd ios/ && pod install # required to have the SDK streaming feature working on
 
 ## Setup
 
-You'll need [NodeJS](https://nodejs.org/en/download/). We recommend that you use the latest LTS version.
+You'll need [Node.js](https://nodejs.org/en/download/). This project was created with an old version of Node.js (v18.17.0) and we **recommend using the same version** to avoid any issues. So consider installing [Node.js Version Manager](https://github.com/nvm-sh/nvm) to manage different versions of Node.js, and running the commands `nvm install` and `nvm use` in the project's root directory to set the correct version before following the next steps.
 
 Second thing you'll need is to install Android Studio and Xcode for Android and iOS development respectively. See [React Native - Setting up the development environment](https://reactnative.dev/docs/environment-setup) for more details.
 

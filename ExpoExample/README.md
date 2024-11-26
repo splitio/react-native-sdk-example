@@ -20,7 +20,7 @@ $ npm install @splitsoftware/splitio-react-native # or 'yarn add @splitsoftware/
 
 ## Setup
 
-You'll need [NodeJS](https://nodejs.org/en/download/). We recommend that you use the latest LTS version.
+You'll need [Node.js](https://nodejs.org/en/download/). This project was created with an old version of Node.js (v16.16.0) and we **recommend using the same version** to avoid any issues. So consider installing [Node.js Version Manager](https://github.com/nvm-sh/nvm) to manage different versions of Node.js, and running the commands `nvm install` and `nvm use` in the project's root directory to set the correct version before following the next steps.
 
 Second thing you'll need is to install [Expo-CLI](https://expo.io/) with the command `npm install -g expo-cli`.
 
@@ -51,7 +51,7 @@ When running you should see a screen like the image below (taken from an Android
 
 ![Running instance screenshot](../docs/mobile_screenshot.png)
 
-If any error rises when trying to run the app in the Android or iOS emulator, consider updating Expo-Cli, or uninstalling the Expo app in your emulator to let Expo-Cli install an updated one.
+If any error rises when trying to run the app in the Android or iOS emulator, consider updating Expo-Cli, or uninstalling the **Expo Go** app in your emulator to let Expo-Cli install a compatible version.
 
 More information on the available scripts below.
 
