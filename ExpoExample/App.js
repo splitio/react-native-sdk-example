@@ -46,7 +46,7 @@ export default class App extends React.Component {
     this.manager = factory.manager();
 
     // Store the version, this won't change.
-    this.sdkVersion = factory.settings.version.match(/(?:\.?\d{1,2}){3}/);
+    this.sdkVersion = factory.settings.version.split('-')[1]
 
     // We'll set an interval to run every three seconds and call getTreatment on
     // a randomly selected Split, taking advantage of the SDK manager.

@@ -1796,19 +1796,20 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
-"@splitsoftware/splitio-commons@1.11.0":
-  version "1.11.0"
-  resolved "https://registry.npmjs.org/@splitsoftware/splitio-commons/-/splitio-commons-1.11.0.tgz"
-  integrity sha512-JxXltOwFrTSDgvuM4MTzrNzxYEX2YSaNLNM/STtehLNRC20O7rYgUrEWT3xcvVOgGMwouyFOpGpNL94TthN2Aw==
+"@splitsoftware/splitio-commons@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/@splitsoftware/splitio-commons/-/splitio-commons-2.0.0.tgz"
+  integrity sha512-Sz4+vFacl29xw3451z9IUgB4zBFKUWZdCnmOB0DDXA803YKPqjXphdAwN6nV+1vsX9pXV/OS6UaNC4oUICa6PA==
   dependencies:
+    "@types/ioredis" "^4.28.0"
     tslib "^2.3.1"
 
-"@splitsoftware/splitio-react-native@0.8.0":
-  version "0.8.0"
-  resolved "https://registry.npmjs.org/@splitsoftware/splitio-react-native/-/splitio-react-native-0.8.0.tgz"
-  integrity sha512-PRCnAJ4t47/fjCLUUWeCV7d40LWdpALTFRJRo3dRLRU10WMvDANC6S23JoidJrUNg1zM/N+h/SFSpD6LG1FQoA==
+"@splitsoftware/splitio-react-native@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@splitsoftware/splitio-react-native/-/splitio-react-native-1.0.1.tgz"
+  integrity sha512-EaLjoUicRd0s40EUlzr/C++awgSl8RB5TZhgaBZ6WC4u9giSzBVHFKQhkrvZKDIQzkZaXD2mK0UsOT0xYqOdIg==
   dependencies:
-    "@splitsoftware/splitio-commons" "1.11.0"
+    "@splitsoftware/splitio-commons" "2.0.0"
 
 "@tsconfig/react-native@^3.0.0":
   version "3.0.2"
@@ -1852,6 +1853,13 @@
   version "4.1.6"
   resolved "https://registry.npmjs.org/@types/graceful-fs/-/graceful-fs-4.1.6.tgz"
   integrity sha512-Sig0SNORX9fdW+bQuTEovKj3uHcUL6LQKbCrrqb1X7J6/ReAbhCXRAhc+SMejhLELFj2QcyuxmUooZ4bt5ReSw==
+  dependencies:
+    "@types/node" "*"
+
+"@types/ioredis@^4.28.0":
+  version "4.28.10"
+  resolved "https://registry.npmjs.org/@types/ioredis/-/ioredis-4.28.10.tgz"
+  integrity sha512-69LyhUgrXdgcNDv7ogs1qXZomnfOEnSmrmMFqKgt1XMJxmoOSG/u3wYy13yACIfKuMJ8IhKgHafDO3sx19zVQQ==
   dependencies:
     "@types/node" "*"
 
