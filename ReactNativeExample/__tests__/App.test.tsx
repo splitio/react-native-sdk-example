@@ -1,5 +1,6 @@
-// Note: import explicitly to use the types shiped with jest.
-import {jest, it, expect} from '@jest/globals';
+import React from 'react';
+import { render, waitFor } from '@testing-library/react-native';
+import App from '../App';
 
 /**
  * If you're looking for how to test with Split SDK, you can mock the module import (see https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)
@@ -24,49 +25,26 @@ jest.mock('@splitsoftware/splitio-react-native', () => {
         features: {
           feature_flag_1: 'on',
         },
-        sync: {
-          localhostMode: splitio.LocalhostFromObject(),
-        },
       });
     },
   };
 });
 
-import 'react-native';
-import React from 'react';
-import App from '../App';
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+it('App renders correctly', async () => {
+  const { getByTestId, unmount } = render(<App />);
 
-const getEvaluation = (root: any) => {
-  // eslint-disable-next-line prettier/prettier
-  const [{ children: [, featureFlagName] }, { children: [, treatment] }] = root.toJSON().children[2].children;
-  return {
-    featureFlagName: featureFlagName.children ? featureFlagName.children[0] : '',
-    treatment: treatment.children[0],
-  };
-};
-
-it('App renders correctly', done => {
   // At initial render, the SDK is instantiated but not ready yet
-  let root = renderer.create(<App />);
-
-  let evaluation = getEvaluation(root);
-  expect(evaluation.featureFlagName).toBe('');
-  expect(evaluation.treatment).toBe('not ready');
+  expect(getByTestId('feature-flag-name').children[0]).toBe(undefined);
+  expect(getByTestId('treatment').children[0]).toBe('not ready');
 
   // Since we mocked the SDK to run in localhost mode, on next tick the SDK is ready
   // and the component is re-rendered with the mocked feature flag name and treatment
-  setTimeout(() => {
-    evaluation = getEvaluation(root);
-    //
-    expect(evaluation.featureFlagName).toBe('feature_flag_1');
-    expect(evaluation.treatment).toBe('on');
+  await waitFor(() => {
+    expect(getByTestId('feature-flag-name').children[0]).toBe('feature_flag_1');
+    expect(getByTestId('treatment').children[0]).toBe('on');
+  });
 
-    // Unmount component to stop asynchronous operations and exit jest immediately
-    root.unmount();
-
-    done();
-  }, 0 /* next tick */);
+  // Unmount component to stop asynchronous operations and exit jest immediately
+  unmount();
 });

@@ -49,10 +49,10 @@ Then install the project dependencies and run the server that communicates with 
 ```sh
 npm install
 cd ios/ && pod install && cd .. # required to have the SDK streaming feature working on iOS
-npm start # init Metro bundler server
+npm start # init Metro dev server, `npm start -- --reset-cache` in case you updated some dependencies
 ```
 
-Finally run either `npm run android` or `npm run ios` in a separete terminal to build and launch the app in a connected device or emulator.
+Finally run either `npm run android` or `npm run ios` in a separate terminal to build and launch the app in a connected device or emulator.
 
 When running you should see a screen like the image below (taken from an Android device).
 
@@ -64,7 +64,7 @@ More information on the available scripts below.
 
 ### `npm start`
 
-Starts the Metro bundler server that communicates with connected devices.
+Starts the Metro dev server, the JavaScript build tool for React Native that communicates with connected devices.
 
 ### `npm test`
 

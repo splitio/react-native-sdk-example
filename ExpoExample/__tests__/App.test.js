@@ -21,9 +21,6 @@ jest.mock('@splitsoftware/splitio-react-native', () => {
         features: {
           feature_flag_1: 'on',
         },
-        sync: {
-          localhostMode: splitio.LocalhostFromObject(),
-        },
       });
     },
   };
