@@ -14,7 +14,7 @@ import { SplitFactory, DebugLogger } from '@splitsoftware/splitio-react-native';
 // Ignore timers warning when debugging in Android. No need to worry about it: https://github.com/facebook/react-native/issues/12981#issuecomment-652745831
 LogBox.ignoreLogs(['Setting a timer']);
 
-export default function App(): JSX.Element {
+export default function App(): React.JSX.Element {
 
   // We'll set some data on the component state to be used on the demo view.
   const [evaluatedFeatureFlag, setEvaluatedFeatureFlag] = React.useState<string>('');
@@ -82,10 +82,10 @@ export default function App(): JSX.Element {
       </View>
       <View style={styles.smallSection}>
         <Text style={styles.bold}>
-          Evaluated feature flag: <Text style={{ color: '#4286f4' }}>{evaluatedFeatureFlag}</Text>
+          Evaluated feature flag: <Text testID="feature-flag-name" style={{ color: '#4286f4' }}>{evaluatedFeatureFlag}</Text>
         </Text>
         <Text style={styles.bold}>
-          Treatment: <Text style={{ color: '#4286f4' }}>{treatment}</Text>
+          Treatment: <Text testID="treatment" style={{ color: '#4286f4' }}>{treatment}</Text>
         </Text>
       </View>
       <View style={styles.section}>
