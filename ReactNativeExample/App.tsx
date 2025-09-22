@@ -8,8 +8,9 @@
 
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image, LogBox } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { SplitFactory, DebugLogger } from '@splitsoftware/splitio-react-native';
+import { SplitFactory, DebugLogger, InLocalStorage } from '@splitsoftware/splitio-react-native';
 
 // Ignore timers warning when debugging in Android. No need to worry about it: https://github.com/facebook/react-native/issues/12981#issuecomment-652745831
 LogBox.ignoreLogs(['Setting a timer']);
@@ -21,7 +22,7 @@ export default function App(): React.JSX.Element {
   const [featureFlagNames, setFeatureFlagNames] = React.useState<string[]>([]);
   const [treatment, setTreatment] = React.useState<string>('not ready');
 
-  const [factory, setFactory] = React.useState<SplitIO.ISDK>();
+  const [factory, setFactory] = React.useState<SplitIO.IBrowserSDK>();
 
   // Instantiate Split SDK factory on component mount.
   React.useEffect(() => {
@@ -32,6 +33,10 @@ export default function App(): React.JSX.Element {
         // Replace with the key you want to evaluate against
         key: 'react_native_example',
       },
+      // Use AsyncStorage to persist the SDK rollout plan and speed up the initialization
+      storage: InLocalStorage({
+        wrapper: AsyncStorage,
+      }),
       // Remove if you want to disable logs. See https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#logging
       debug: DebugLogger(),
     });

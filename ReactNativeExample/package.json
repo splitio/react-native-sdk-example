@@ -10,7 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@splitsoftware/splitio-react-native": "1.2.0",
+    "@react-native-async-storage/async-storage": "^2.2.0",
+    "@splitsoftware/splitio-react-native": "1.3.0",
     "react": "19.0.0",
     "react-native": "0.79.2"
   },
