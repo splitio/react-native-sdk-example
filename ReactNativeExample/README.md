@@ -28,8 +28,7 @@ To run the app, first replace the `'<SDK-KEY>'` string in the App.js file with t
 Optionally, you can try a [localhost configuration](https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#localhost-mode) as the example below:
 
 ```javascript
-// Localhost mode is simpler to set by importing the SplitFactory from the `full` entrypoint of the SDK
-import { SplitFactory } from '@splitsoftware/splitio-react-native/full';
+import { SplitFactory } from '@splitsoftware/splitio-react-native';
 
 const factory = SplitFactory({
   core: {

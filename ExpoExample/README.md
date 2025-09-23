@@ -1,12 +1,11 @@
 # Split React Native SDK example application with Expo.
 
-This project was bootstrapped with [Expo-CLI](https://docs.expo.dev/workflow/expo-cli/) using its [Managed Workflow](https://docs.expo.dev/introduction/managed-vs-bare/).
+This project was bootstrapped with [Expo-CLI](https://docs.expo.dev/more/expo-cli/) using [create-expo-app](https://docs.expo.dev/get-started/create-a-project/).
 
 ```sh
-$ npm install -g expo-cli
-$ expo init ExpoExample
+$ npx create-expo-app ExpoExample
 $ cd ExpoExample/
-$ npm install @splitsoftware/splitio-react-native # or 'yarn add @splitsoftware/splitio-react-native' if using yarn dependency manager
+$ npx expo install @splitsoftware/splitio-react-native
 ```
 
 ## Table of Contents
@@ -22,15 +21,12 @@ $ npm install @splitsoftware/splitio-react-native # or 'yarn add @splitsoftware/
 
 You'll need [Node.js](https://nodejs.org/en/download/). This project was created with an old version of Node.js (v16.16.0) and we **recommend using the same version** to avoid any issues. So consider installing [Node.js Version Manager](https://github.com/nvm-sh/nvm) to manage different versions of Node.js, and running the commands `nvm install` and `nvm use` in the project's root directory to set the correct version before following the next steps.
 
-Second thing you'll need is to install [Expo-CLI](https://expo.io/) with the command `npm install -g expo-cli`.
-
 To run the app, first replace the `'<SDK-KEY>'` string in the App.js file with the SDK key of client-side type of your Split environment.
 
 Optionally, you can try a [localhost configuration](https://help.split.io/hc/en-us/articles/4406066357901-React-Native-SDK#localhost-mode) as the example below:
 
 ```javascript
-// Localhost mode is simpler to set by importing the SplitFactory from the `full` entrypoint of the SDK
-import { SplitFactory } from '@splitsoftware/splitio-react-native/full';
+import { SplitFactory } from '@splitsoftware/splitio-react-native';
 
 const factory = SplitFactory({
   core: {
@@ -45,7 +41,8 @@ const factory = SplitFactory({
 });
 ```
 
-Then call `npm install` and `npm start`.
+<!-- TODO: Is `npm install && npx expo install` the way? -->
+Then install dependencies with `npm install && npx expo install` and run the project in the Web or a Mobile simulator with `npm start`.
 
 When running you should see a screen like the image below (taken from an Android device).
 
