@@ -6,10 +6,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image, LogBox } from 'react-native';
 
-// Polyfill global EventSource to use Split SDK streaming feature in Expo
-import RNEventSource from 'react-native-event-source';
-globalThis.EventSource = RNEventSource;
-
 import { SplitFactory, DebugLogger } from '@splitsoftware/splitio-react-native';
 
 // Ignore timers warning when debugging in Android. No need to worry about it: https://github.com/facebook/react-native/issues/12981#issuecomment-652745831
